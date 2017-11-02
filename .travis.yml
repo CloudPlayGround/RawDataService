@@ -1,0 +1,15 @@
+sudo: required
+
+services:
+  - docker
+
+branches:
+  only:
+    - master
+
+install:
+  - docker build -t tilen/rawdataservice .
+
+script:
+  - case $TRAVIS_BRANCH in master) project=project1;; branch1) project=project2;; esac
+  - docker run hnakamur/example $project
