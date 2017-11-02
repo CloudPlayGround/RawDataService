@@ -36,9 +36,6 @@
   "engines": {
     "node": ">= 4.0.0"
   },
-  "eslintConfig": {
-    "extends": "trails"
-  },
   "repository": "/raw-data-service",
   "private": true
 }
