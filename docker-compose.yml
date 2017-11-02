@@ -1,0 +1,17 @@
+version: "3"
+services:
+  mongo:
+    image: mongo:3
+    environment:
+      - MONGO_PASSWORD=demo
+      - MONGO_DB=demo
+    ports:
+      - "5432:5432"
+  raw-data-service:
+    image: tilen/rawdataservice
+    environment:
+      - MONGO_CONN=jdbc:postgresql://postgres:5432/customer
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
