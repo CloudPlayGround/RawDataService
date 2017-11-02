@@ -6,7 +6,6 @@ WORKDIR /app
 
 ADD ./ /app
 
-# RUN rm -rf node_modules
 RUN yarn install
 
 EXPOSE 6001
